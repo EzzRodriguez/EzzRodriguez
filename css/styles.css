@@ -1,0 +1,488 @@
+@font-face {
+    font-family: open-sans;
+    src: url(/fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+    font-family: cascadia-code;
+    src: url(/fonts/CascadiaCode.ttf);
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: open-sans;
+    width: 100%;
+    background-color: #1c1c1c;
+    
+}
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+    display: none;
+} 
+
+body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 0px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #111;
+}
+.background-image{
+    overflow: hidden;
+    position: absolute;
+    height: 1080px;
+    width: 100%;
+    z-index: -1;
+}
+.bg{ 
+    height: 1080px;   
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    -webkit-mask: -webkit-gradient(linear, left top, left top, from(transparent), color-stop(50%, white));
+    -webkit-mask: linear-gradient(to top, transparent 0%, white 50%);
+    mask: -webkit-gradient(linear, left top, left top, from(transparent), color-stop(50%, white));
+    mask: linear-gradient(to top, transparent 0%, white 50%);
+}
+.bg img{
+    overflow: hidden;
+    width: auto;
+    height: 1080px;   
+    filter: blur(3px);
+    position: relative;
+    z-index: -1;
+}
+.nav{
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.354);
+    color: #fff;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    font-family: cascadia-code;
+}
+.nav img{
+    width: 46px;
+    margin-top: 7px;
+    transition: .2s;
+    position: relative;
+}
+.nav .logo::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: -12px;
+    width: 45px;
+    height: 48px;
+    background: linear-gradient(90deg, #00aaff 0%, #ff7700 100% );
+    transform: translate3d(0px, 20px, 0) scale(0.95);
+    filter: blur(10px);
+    opacity: var(0.7);
+    border-radius: 10px;
+}
+.nav img:hover{
+    transform: scale(1.1);
+}
+.nav-anchors{
+    user-select: none;
+    scroll-behavior: smooth;
+}
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: .1s;
+}
+.nav-anchors a{
+    position: relative;
+    scroll-behavior: smooth;
+}
+.nav-anchors a:hover{
+    border:1px solid #fff;
+}
+.bx-code-alt{
+    position: relative;
+    top: 2px;
+    left: -2px;
+    color: #009797;
+    
+}
+/*<-----------Fin del header----------->*/
+main{
+    padding: 0px 20px;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+}
+.border{
+    width: 100%;
+    height: 273px;
+    animation: glowing 60s linear infinite;
+    background: linear-gradient(90deg, #aa00aa, #0ff, #aaa, #0ff, #aa00aa, #0ff, #aaa, #0ff,  #aa00aa);
+    background-size: 800%;
+    display: flex;
+    align-items: center;
+}
+.wc{
+    background-color: #1c1c1c;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.wc-container{
+    padding: 0px 10px;
+}
+.name{
+    color: #fff;
+    font-size: 48px;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    height: 70px;
+    position: relative;
+}
+.name h1{
+    margin: 0;
+}
+.profession-links{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.profession h2{
+    padding-left: 3px;
+    font-size: 30px;
+    border-right: 3px solid #fff;
+    margin: 0;
+    background: linear-gradient(90deg, #aa00aa, #0ff, #fff, #0dd, #aa00aa, #0ff, #fff, #0ff, #aa00aa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;  
+    background-size: 800%;
+    animation: glowing 60s linear infinite, type 2s steps(17), blink .5s infinite step-end alternate;
+    font-family: monospace;
+    width: 17.3ch;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@keyframes type {
+    from{ width: 0;}
+}
+@keyframes blink {
+    50%{ border-color: transparent;}
+}
+.git-links{
+    display: flex;
+    font-size: 35px;
+    text-decoration: none;
+    align-items: center;
+    margin-bottom: 2px;
+    margin-right: -5px;
+}
+.git-links a:hover{
+    transform: scale(1.1);
+    color: transparent;
+}
+.git-links a {
+    color: #fff;
+    height: 40px;
+    transition: .3s;
+    padding: 0px 2px 1px 0px;
+    background: linear-gradient(45deg, #aa00aa, #0dd);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+/*<-----------Fin Bienvenida------------>*/
+main{
+    margin-top: 60px;
+}
+.projects{
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #11111199;
+    margin-bottom: 100px;
+}
+.projects-title h2{
+    color: #fff;
+    font-size: 50px;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+}
+.cards-container{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns:1fr  1fr 1fr ;
+    gap: 40px;
+}
+.card-container{
+    background-color: #1c1c1c;
+    max-width: 300px;
+    border-radius: 4px 0px 4px 0px;
+    text-align:left;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    transition: .4s;
+    padding: 14px 20px;
+
+}
+@keyframes scroll {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.tags{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px;
+}
+.tags h4{
+    padding-right: 10px;
+    color: #009797;
+    font-size: 14px;
+}
+.card-container:hover{
+    border: 1px solid #DAE0E6;
+    cursor: pointer;
+    transform: translate(0px, -3px) scale(1.05);
+}
+.card-container a{
+    color: #aaa;
+    text-decoration: none;
+}
+.card-container h3{
+    padding-bottom: 10px;
+    color: #eee;
+    text-align: left;
+    font-size: 17px;
+    font-weight:700;
+}
+.card-text{
+    font-size: 13px;
+    padding-bottom: 15px;
+}
+.card-img img{
+    width: 100%;
+    border-radius: 4px;
+}
+.card-body .bx{
+    float: right;
+}
+/*<-------------Fin Proyectos---------------->*/
+.about{
+    margin: 100px auto;
+    max-width: 800px;
+}
+.about-container{
+    background-color: #111111ee;
+    color: #aaa;
+    border-radius: 10px 0px;
+    text-align:left;
+    display: flex;
+    border: 1px solid #fff;
+    padding: 14px 20px;
+    height:max-content;
+    box-shadow: 0px 0px 10px #0dd;
+}
+.about-img {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text{
+    font-size: 18px;
+    margin-left: 20px;
+}
+.about-text h1{
+    color: #0dd;
+}
+/*<-----------Fin del About--------------->*/
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111111ee;
+    color: #fff;
+    font-size: 10px;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #DAE0E6;
+}
+footer a{
+    color: #009797;
+}
+/*<-----------Fin del Footer-------------->*/
+@media (max-width:950px) {
+    .bg{
+        margin-left: -400px;
+    }
+    .cards-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .card-container{
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .name {
+        font-size: 40px;
+    }
+    .profession h2{
+        font-size: 25px;
+    }
+    .border{
+        height: 230px;
+    }
+    .nav{
+        font-size: 17px;
+    }
+    .home{
+        height: 500px;
+    }
+    main{
+        padding: 0;
+    }
+    .projects{
+        border-radius: 0;
+    }
+    .about-container{
+        border-radius: 0;
+    }
+    .card-container{
+        padding: 15px;
+    }
+    .about-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-left: none;
+        border-right: none;
+    }
+    .about-img{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .home{
+        height: 400px;
+    }
+    .name {
+        font-size: 32px;
+        height: 35px;
+    }
+    .profession h2{
+        font-size: 18px;
+    }
+    .border{
+        height: 190px;
+    }
+    .logo img{
+        width: 40px;
+    }
+    .nav{
+        font-size: 14px;
+    }
+    .git-links a{
+        font-size: 30px;
+    }
+    .git-links{
+        margin-bottom: 0px;
+    }
+    .cards-container{
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    .projects{
+        width: 100%;
+    }
+    .projects-title h2{
+        font-size: 26px;
+    }
+    main{
+        margin: 0;
+    }
+}
