@@ -199,6 +199,16 @@ main{
     width: 100%;
     justify-content: space-between;
 }
+.profession-links a{
+    text-decoration: none;
+    letter-spacing: -3px;
+    font-size:35px;
+    font-family: cascadia-code;
+    font-weight: 600;
+}
+.profession-links .cv{
+    margin-bottom: 4px;
+}
 .profession h2{
     padding-left: 3px;
     font-size: 30px;
